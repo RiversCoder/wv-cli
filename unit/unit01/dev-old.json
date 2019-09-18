@@ -1,0 +1,130 @@
+{
+	"mode": "development",
+	"entry": "./src/main.js",
+	"output": {
+		"path": "C:\\web\\npm\\webpack\\webpack-vue-cli\\unit\\unit01\\dist",
+		"filename": "js/[name].js",
+		"chunkFilename": "js/[name].bundle.js",
+		"publicPath": "/"
+	},
+	"devtool": "#eval-source-map",
+	"devServer": {
+		"contentBase": "C:\\web\\npm\\webpack\\webpack-vue-cli\\unit\\unit01\\dist",
+		"port": 3002,
+		"open": false,
+		"hot": true
+	},
+	"module": {
+		"rules": [
+			{
+				"test": {},
+				"loader": "babel-loader",
+				"exclude": {}
+			},
+			{
+				"test": {},
+				"use": [
+					"style-loader",
+					"css-loader"
+				]
+			},
+			{
+				"test": {},
+				"use": [
+					{
+						"loader": "file-loader",
+						"options": {
+							"limit": 10000,
+							"name": "img/[name].[ext]?[hash]"
+						}
+					}
+				]
+			},
+			{
+				"test": {},
+				"use": [
+					{
+						"loader": "url-loader",
+						"options": {
+							"limit": 10000,
+							"name": "fonts/[name].[ext]?[hash]"
+						}
+					}
+				]
+			},
+			{
+				"test": {},
+				"use": [
+					"style-loader",
+					"css-loader",
+					"less-loader"
+				]
+			},
+			{
+				"test": {},
+				"loader": "vue-loader",
+				"options": {
+					"loaders": {
+						"css": "",
+						"less": [
+							"vue-style-loader",
+							"css-loader",
+							"less-loader"
+						]
+					}
+				}
+			}
+		]
+	},
+	"resolve": {
+		"extensions": [
+			".js",
+			".vue",
+			".json"
+		],
+		"alias": {
+			"vue$": "vue/dist/vue.esm.js",
+			"@": "C:\\web\\npm\\webpack\\webpack-vue-cli\\unit\\unit01\\src"
+		}
+	},
+	"plugins": [
+		{
+			"definitions": {
+				"process.env": {
+					"NODE_ENV": "\"development\""
+				}
+			}
+		},
+		{},
+		{
+			"options": {
+				"template": "./index.html",
+				"filename": "index.html",
+				"hash": true,
+				"inject": true,
+				"compile": true,
+				"favicon": false,
+				"minify": false,
+				"cache": true,
+				"showErrors": true,
+				"chunks": "all",
+				"excludeChunks": [],
+				"chunksSortMode": "auto",
+				"meta": {},
+				"title": "webpack-vue",
+				"xhtml": false
+			}
+		},
+		{
+			"options": {},
+			"fullBuildTimeout": 200,
+			"requestTimeout": 10000
+		}
+	],
+	"externals": {
+		"jquery": "window.jQuery"
+	},
+	"performance": {
+		"hints": false
+	}
+}
